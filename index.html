@@ -4,11 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday! 🎂✨</title>
-  <!-- Cute Cartoonish Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
-  <!-- Confetti Effect Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <!-- Link to your CSS file -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,20 +13,19 @@
   <!-- Top Red & White Gingham Border -->
   <div class="gingham-border top"></div>
 
-  <!-- Background Music (Upload your funny birthday mp3 as 'birthday-song.mp3') -->
+  <!-- Background Music -->
   <audio id="bgMusic" loop>
     <source src="birthday-song.mp3" type="audio/mpeg" />
   </audio>
 
-  <!-- Floating Music Toggle Button (Appears after clicking Start) -->
+  <!-- Floating Music Toggle Button -->
   <button id="musicToggle" class="music-btn hidden" onclick="toggleMusic()" aria-label="Toggle Music">
     🔊
   </button>
 
-  <!-- Main Mobile-Responsive Card Container -->
   <main class="app-container">
 
-    <!-- SLIDE 0: START SCREEN (Required to unlock browser audio autoplay) -->
+    <!-- SLIDE 0: START SCREEN -->
     <section class="slide active" id="slide-0">
       <div class="bounce-emoji">💌</div>
       <h1>Special Delivery!</h1>
@@ -37,25 +33,21 @@
       <button class="btn btn-primary" onclick="startExperience()">Start ✨</button>
     </section>
 
-    <!-- SLIDE 1: BIRTHDAY CAKE & CANDLE INTERACTION -->
+    <!-- SLIDE 1: BIRTHDAY CAT + INTERACTIVE CANDLE -->
     <section class="slide" id="slide-1">
       <div class="badge">🎉 IT'S YOUR DAY 🎉</div>
       <!-- EDIT HIS NAME BELOW -->
       <h1>Happy Birthday, [Name]!</h1>
       
-      <!-- Interactive CSS Cartoon Cake -->
-      <div class="cake-stage">
-        <div class="cake">
-          <div class="candle">
-            <div class="flame" id="candleFlame"></div>
-          </div>
-          <div class="frosting"></div>
-          <div class="cake-body"></div>
-          <div class="plate"></div>
+      <!-- Custom Cat Image with Interactive Candle Positioned on the Cake -->
+      <div class="cat-cake-wrapper">
+        <img src="cat.jpeg" alt="Birthday Cat Holding Cake" class="cat-cake-img" />
+        <div class="overlay-candle">
+          <div class="flame" id="candleFlame"></div>
         </div>
       </div>
 
-      <p id="cakeStatus" class="subtitle">Make a wish and blow out your candle!</p>
+      <p id="cakeStatus" class="subtitle">Make a wish and blow out the candle!</p>
 
       <button id="blowBtn" class="btn btn-primary" onclick="blowCandle()">Blow the Candle 💨</button>
       <button id="nextFromCake" class="btn btn-secondary hidden" onclick="nextSlide()">Next →</button>
@@ -63,7 +55,6 @@
 
     <!-- SLIDE 2: GIFT PROMPT + GRUMPY DUCK TRAP -->
     <section class="slide" id="slide-2">
-      <!-- State A: The Question -->
       <div id="giftQuestionState">
         <div class="wiggle-emoji">🎁</div>
         <h2>Do you want to open your gift?</h2>
@@ -74,9 +65,7 @@
         </div>
       </div>
 
-      <!-- State B: Grumpy Duck Trap (Hidden by default) -->
       <div id="grumpyDuckState" class="hidden">
-        <!-- Cute/Funny Grumpy Duck Graphic (Replace src with your own duck meme PNG if desired!) -->
         <div class="character-card grumpy">
           <div class="duck-art">🦆💢</div>
           <span class="speech-bubble">"Excuse me?! Wrong answer."</span>
@@ -92,7 +81,6 @@
       <h2>My Favorite Person 📸</h2>
       <p class="subtitle">A few of my favorite snapshots of you</p>
 
-      <!-- Replace photo1.jpg - photo4.jpg with your uploaded images -->
       <div class="photo-grid">
         <div class="polaroid">
           <img src="photo1.jpg" alt="Favorite Photo 1" onerror="this.src='https://placehold.co/300x300/ffe5e5/e63946?text=Photo+1'" />
@@ -115,45 +103,62 @@
       <button class="btn btn-primary" onclick="nextSlide()">Next →</button>
     </section>
 
-    <!-- SLIDE 4: SPOTIFY SONG LINK -->
+    <!-- SLIDE 4: SPOTIFY ALBUM COVER CARD -->
     <section class="slide" id="slide-4">
-      <div class="spin-record">💿</div>
-      <h2>A Song That Reminds Me of You</h2>
-      <p class="subtitle">Every time I hear this, I think of you and smile.</p>
+      <h2>Our Soundtrack 🎶</h2>
+      <p class="subtitle">Every time this plays, I think of you.</p>
 
-      <div class="music-card">
-        <div class="song-info">
-          <!-- EDIT SONG TITLE & ARTIST BELOW -->
-          <strong>[Your Special Song Title]</strong>
-          <span>[Artist Name]</span>
+      <div class="spotify-player-card">
+        <!-- Upload a photo of you two as 'couple-song.jpg' -->
+        <div class="album-art-box">
+          <img src="couple-song.jpg" alt="Us Album Cover" onerror="this.src='https://placehold.co/400x400/1db954/ffffff?text=Our+Photo'" />
+          <span class="spotify-badge">Spotify</span>
         </div>
-        <!-- REPLACE THE HREF WITH YOUR ACTUAL SPOTIFY TRACK LINK -->
+
+        <div class="track-header">
+          <div class="track-meta">
+            <!-- EDIT SONG TITLE & ARTIST BELOW -->
+            <strong>[Your Song Title]</strong>
+            <span>[Artist Name]</span>
+          </div>
+          <span class="heart-icon">💚</span>
+        </div>
+
+        <!-- Decorative Spotify Progress Bar -->
+        <div class="progress-wrapper">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="time-stamps">
+            <span>1:14</span>
+            <span>3:28</span>
+          </div>
+        </div>
+
+        <!-- REPLACE HREF WITH YOUR DIRECT SPOTIFY SONG LINK -->
         <a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer" class="btn btn-spotify">
-          Listen on Spotify 🎧
+          ▶ Play on Spotify
         </a>
       </div>
 
       <button class="btn btn-secondary" onclick="nextSlide()">Next →</button>
     </section>
 
-    <!-- SLIDE 5: CUTE ANIMATED DINOSAUR ("I LOVE YOU THIS MUCH") -->
+    <!-- SLIDE 5: CUSTOM DINO STICKER ("I LOVE YOU THIS MUCH") -->
     <section class="slide" id="slide-5">
-      <div class="character-stage">
-        <div class="dino-hug">
-          <span class="arm-left">🫲</span>
-          <span class="dino-body">🦖</span>
-          <span class="arm-right">🫱</span>
-        </div>
+      <div class="sticker-stage">
+        <!-- Upload your dino gif/image as 'dino.gif' (falls back to 'tenor.jpg' if static) -->
+        <img src="dino.gif" alt="I love you this much dinosaur" class="custom-sticker-img dino-anim" onerror="this.onerror=null; this.src='tenor.jpg';" />
       </div>
-      <h2>I love you THIS much!</h2>
       <p class="subtitle">(Even with tiny T-Rex arms, that's a whole lot.)</p>
       <button class="btn btn-primary" onclick="nextSlide()">Next →</button>
     </section>
 
-    <!-- SLIDE 6: CUTE ANIMATED GHOST ("HUGGING YOU THROUGH MY PHONE") -->
+    <!-- SLIDE 6: CUSTOM KERMIT HUGGING PHONE STICKER -->
     <section class="slide" id="slide-6">
-      <div class="character-stage">
-        <div class="floating-ghost">👻💕</div>
+      <div class="sticker-stage">
+        <!-- Upload your transparent Kermit PNG as 'hug.png' -->
+        <img src="hug.png" alt="Hugging you through my phone" class="custom-sticker-img hug-anim" />
       </div>
       <h2>Hugging you through my phone!</h2>
       <p class="subtitle">Happy Birthday, baby. I'm so lucky to have you in my life. Here's to the best year ahead! 🥂</p>
@@ -168,7 +173,6 @@
   <!-- Bottom Red & White Gingham Border -->
   <div class="gingham-border bottom"></div>
 
-  <!-- Link to your JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
