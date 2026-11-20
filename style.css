@@ -1,0 +1,453 @@
+/* =========================================
+   1. VARIABLES & GLOBAL SETUP
+   ========================================= */
+:root {
+  --bg-white: #ffffff;
+  --grid-gray: #e5e7eb;
+  --gingham-red: #ef4444;
+  --gingham-pink: rgba(239, 68, 68, 0.45);
+  --primary: #ef4444;
+  --primary-dark: #dc2626;
+  --secondary: #3b82f6;
+  --spotify-green: #1db954;
+  --text-dark: #27272a;
+  --text-muted: #71717a;
+  --border-ink: #27272a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background-color: var(--bg-white);
+  /* Thin gray grid overlay */
+  background-image:
+    linear-gradient(to right, var(--grid-gray) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-gray) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   2. RED & WHITE GINGHAM BORDERS
+   ========================================= */
+.gingham-border {
+  width: 100%;
+  height: 36px;
+  background-color: #ffffff;
+  /* Classic Red-and-White Gingham Checkered Pattern */
+  background-image:
+    linear-gradient(90deg, var(--gingham-pink) 50%, transparent 50%),
+    linear-gradient(var(--gingham-pink) 50%, transparent 50%);
+  background-size: 28px 28px;
+  border-bottom: 3px solid var(--border-ink);
+  flex-shrink: 0;
+  z-index: 20;
+}
+
+.gingham-border.bottom {
+  border-bottom: none;
+  border-top: 3px solid var(--border-ink);
+}
+
+/* =========================================
+   3. MAIN CONTAINER & SLIDE SYSTEM
+   ========================================= */
+.app-container {
+  width: 100%;
+  max-width: 460px;
+  padding: 20px 16px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  background: #ffffff;
+  border: 3px solid var(--border-ink);
+  border-radius: 28px;
+  padding: 32px 22px;
+  text-align: center;
+  /* Cartoonish hard drop-shadow */
+  box-shadow: 6px 6px 0px var(--border-ink);
+  animation: popSlide 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes popSlide {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================
+   4. TYPOGRAPHY & BUTTONS
+   ========================================= */
+.badge {
+  display: inline-block;
+  background: #fee2e2;
+  color: var(--primary);
+  border: 2px solid var(--border-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.btn {
+  display: inline-block;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: 3px solid var(--border-ink);
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 3px 3px 0px var(--border-ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--border-ink);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #fde047;
+  color: var(--text-dark);
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: var(--text-dark);
+}
+
+.btn-spotify {
+  background-color: var(--spotify-green);
+  color: #ffffff;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Floating Audio Control */
+.music-btn {
+  position: fixed;
+  top: 48px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid var(--border-ink);
+  box-shadow: 3px 3px 0px var(--border-ink);
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 30;
+}
+
+/* =========================================
+   5. SLIDE 1: INTERACTIVE CARTOON CAKE
+   ========================================= */
+.cake-stage {
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 15px 0 20px;
+}
+
+.cake {
+  position: relative;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.candle {
+  width: 14px;
+  height: 36px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 5px,
+    #ef4444 5px,
+    #ef4444 10px
+  );
+  border: 2.5px solid var(--border-ink);
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+}
+
+.flame {
+  width: 16px;
+  height: 22px;
+  background: radial-gradient(circle at 50% 70%, #fef08a, #f97316);
+  border: 2px solid var(--border-ink);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  position: absolute;
+  top: -24px;
+  left: -3px;
+  animation: flicker 0.6s infinite alternate;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.flame.blown-out {
+  opacity: 0;
+  transform: scale(0.2) translateY(-10px);
+}
+
+@keyframes flicker {
+  from { transform: scale(1) rotate(-3deg); }
+  to { transform: scale(1.1) rotate(3deg); }
+}
+
+.frosting {
+  width: 126px;
+  height: 22px;
+  background: #fbcfe8;
+  border: 3px solid var(--border-ink);
+  border-radius: 14px 14px 6px 6px;
+  z-index: 2;
+}
+
+.cake-body {
+  width: 120px;
+  height: 46px;
+  background: #fde68a;
+  border: 3px solid var(--border-ink);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.plate {
+  width: 155px;
+  height: 10px;
+  background: #e4e4e7;
+  border: 2.5px solid var(--border-ink);
+  border-radius: 10px;
+}
+
+/* =========================================
+   6. SLIDE 2: GRUMPY DUCK TRAP
+   ========================================= */
+.character-card.grumpy {
+  background: #fef2f2;
+  border: 3px solid var(--border-ink);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.duck-art {
+  font-size: 4rem;
+  animation: shake 0.5s ease-in-out infinite alternate;
+}
+
+.speech-bubble {
+  display: inline-block;
+  background: #ffffff;
+  border: 2px solid var(--border-ink);
+  border-radius: 14px;
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+@keyframes shake {
+  from { transform: rotate(-6deg); }
+  to { transform: rotate(6deg); }
+}
+
+/* =========================================
+   7. SLIDE 3: PHOTO GALLERY
+   ========================================= */
+.photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.polaroid {
+  background: #ffffff;
+  border: 2.5px solid var(--border-ink);
+  border-radius: 12px;
+  padding: 8px 8px 10px;
+  box-shadow: 3px 3px 0px var(--border-ink);
+}
+
+.polaroid:nth-child(odd) { transform: rotate(-1.5deg); }
+.polaroid:nth-child(even) { transform: rotate(1.5deg); }
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-ink);
+  margin-bottom: 6px;
+}
+
+.polaroid span {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+/* =========================================
+   8. SLIDE 4: SPOTIFY CARD
+   ========================================= */
+.music-card {
+  background: #f0fdf4;
+  border: 3px solid var(--border-ink);
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.song-info strong {
+  font-size: 1.1rem;
+}
+
+.song-info span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.spin-record {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================================
+   9. SLIDES 5 & 6: ANIMATED DINO & GHOST
+   ========================================= */
+.bounce-emoji, .wiggle-emoji {
+  font-size: 3.8rem;
+  margin-bottom: 12px;
+  display: inline-block;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.character-stage {
+  margin: 10px 0 18px;
+}
+
+/* Animated Dinosaur Stretching Arms */
+.dino-hug {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  gap: 6px;
+}
+
+.arm-left {
+  display: inline-block;
+  animation: stretchLeft 1.2s infinite alternate ease-in-out;
+}
+
+.arm-right {
+  display: inline-block;
+  animation: stretchRight 1.2s infinite alternate ease-in-out;
+}
+
+@keyframes stretchLeft {
+  from { transform: translateX(0) rotate(0deg); }
+  to { transform: translateX(-18px) rotate(-15deg); }
+}
+
+@keyframes stretchRight {
+  from { transform: translateX(0) rotate(0deg); }
+  to { transform: translateX(18px) rotate(15deg); }
+}
+
+/* Animated Floating Ghost */
+.floating-ghost {
+  font-size: 4.5rem;
+  display: inline-block;
+  animation: floatGhost 2s infinite ease-in-out;
+}
+
+@keyframes floatGhost {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-14px) scale(1.08); }
+}
