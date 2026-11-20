@@ -4,12 +4,10 @@
 :root {
   --bg-white: #ffffff;
   --grid-gray: #e5e7eb;
-  --gingham-red: #ef4444;
   --gingham-pink: rgba(239, 68, 68, 0.45);
   --primary: #ef4444;
-  --primary-dark: #dc2626;
-  --secondary: #3b82f6;
   --spotify-green: #1db954;
+  --spotify-dark: #191414;
   --text-dark: #27272a;
   --text-muted: #71717a;
   --border-ink: #27272a;
@@ -24,7 +22,6 @@
 body {
   font-family: 'Fredoka', sans-serif;
   background-color: var(--bg-white);
-  /* Thin gray grid overlay */
   background-image:
     linear-gradient(to right, var(--grid-gray) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-gray) 1px, transparent 1px);
@@ -45,7 +42,6 @@ body {
   width: 100%;
   height: 36px;
   background-color: #ffffff;
-  /* Classic Red-and-White Gingham Checkered Pattern */
   background-image:
     linear-gradient(90deg, var(--gingham-pink) 50%, transparent 50%),
     linear-gradient(var(--gingham-pink) 50%, transparent 50%);
@@ -79,9 +75,8 @@ body {
   background: #ffffff;
   border: 3px solid var(--border-ink);
   border-radius: 28px;
-  padding: 32px 22px;
+  padding: 28px 20px;
   text-align: center;
-  /* Cartoonish hard drop-shadow */
   box-shadow: 6px 6px 0px var(--border-ink);
   animation: popSlide 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -91,14 +86,8 @@ body {
 }
 
 @keyframes popSlide {
-  from {
-    opacity: 0;
-    transform: scale(0.9) translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  from { opacity: 0; transform: scale(0.9) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 .hidden {
@@ -117,32 +106,32 @@ body {
   font-weight: 700;
   padding: 4px 12px;
   border-radius: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   line-height: 1.15;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   line-height: 1.2;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  font-size: 1rem;
+  font-size: 0.98rem;
   color: var(--text-muted);
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .btn {
   display: inline-block;
   font-family: 'Fredoka', sans-serif;
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 50px;
@@ -173,13 +162,6 @@ h2 {
   color: var(--text-dark);
 }
 
-.btn-spotify {
-  background-color: var(--spotify-green);
-  color: #ffffff;
-  width: 100%;
-  margin-top: 10px;
-}
-
 .btn-group {
   display: flex;
   justify-content: center;
@@ -187,7 +169,6 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* Floating Audio Control */
 .music-btn {
   position: fixed;
   top: 48px;
@@ -204,50 +185,54 @@ h2 {
 }
 
 /* =========================================
-   5. SLIDE 1: INTERACTIVE CARTOON CAKE
+   5. SLIDE 1: BIRTHDAY CAT + INTERACTIVE CANDLE
    ========================================= */
-.cake-stage {
-  height: 150px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  margin: 15px 0 20px;
-}
-
-.cake {
+.cat-cake-wrapper {
   position: relative;
-  width: 140px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 220px;
+  margin: 0 auto 16px;
+  border-radius: 20px;
+  border: 3px solid var(--border-ink);
+  box-shadow: 4px 4px 0px var(--border-ink);
+  overflow: hidden;
+  background: #fff5f5;
 }
 
-.candle {
-  width: 14px;
-  height: 36px;
+.cat-cake-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Candle positioned directly over the pink cake the cat is holding */
+.overlay-candle {
+  position: absolute;
+  top: 49%;
+  left: 31%;
+  width: 10px;
+  height: 24px;
   background: repeating-linear-gradient(
     45deg,
     #ffffff,
-    #ffffff 5px,
-    #ef4444 5px,
-    #ef4444 10px
+    #ffffff 4px,
+    #ef4444 4px,
+    #ef4444 8px
   );
-  border: 2.5px solid var(--border-ink);
-  border-bottom: none;
-  border-radius: 4px 4px 0 0;
-  position: relative;
+  border: 2px solid var(--border-ink);
+  border-radius: 3px;
+  z-index: 5;
 }
 
 .flame {
-  width: 16px;
-  height: 22px;
+  width: 14px;
+  height: 19px;
   background: radial-gradient(circle at 50% 70%, #fef08a, #f97316);
   border: 2px solid var(--border-ink);
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   position: absolute;
-  top: -24px;
-  left: -3px;
-  animation: flicker 0.6s infinite alternate;
+  top: -21px;
+  left: -4px;
+  animation: flicker 0.55s infinite alternate;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -257,34 +242,8 @@ h2 {
 }
 
 @keyframes flicker {
-  from { transform: scale(1) rotate(-3deg); }
-  to { transform: scale(1.1) rotate(3deg); }
-}
-
-.frosting {
-  width: 126px;
-  height: 22px;
-  background: #fbcfe8;
-  border: 3px solid var(--border-ink);
-  border-radius: 14px 14px 6px 6px;
-  z-index: 2;
-}
-
-.cake-body {
-  width: 120px;
-  height: 46px;
-  background: #fde68a;
-  border: 3px solid var(--border-ink);
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.plate {
-  width: 155px;
-  height: 10px;
-  background: #e4e4e7;
-  border: 2.5px solid var(--border-ink);
-  border-radius: 10px;
+  from { transform: scale(1) rotate(-4deg); }
+  to { transform: scale(1.12) rotate(4deg); }
 }
 
 /* =========================================
@@ -356,44 +315,113 @@ h2 {
 }
 
 /* =========================================
-   8. SLIDE 4: SPOTIFY CARD
+   8. SLIDE 4: SPOTIFY ALBUM COVER CARD
    ========================================= */
-.music-card {
-  background: #f0fdf4;
+.spotify-player-card {
+  background: var(--spotify-dark);
+  color: #ffffff;
   border: 3px solid var(--border-ink);
-  border-radius: 18px;
+  border-radius: 22px;
   padding: 16px;
   margin-bottom: 20px;
+  text-align: left;
+  box-shadow: 4px 4px 0px var(--border-ink);
 }
 
-.song-info {
+.album-art-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 2px solid #333333;
+}
+
+.album-art-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.spotify-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--spotify-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.track-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.track-meta {
   display: flex;
   flex-direction: column;
-  margin-bottom: 8px;
 }
 
-.song-info strong {
-  font-size: 1.1rem;
+.track-meta strong {
+  font-size: 1.15rem;
+  color: #ffffff;
 }
 
-.song-info span {
-  font-size: 0.9rem;
-  color: var(--text-muted);
+.track-meta span {
+  font-size: 0.88rem;
+  color: #b3b3b3;
 }
 
-.spin-record {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
-  display: inline-block;
-  animation: spin 4s linear infinite;
+.heart-icon {
+  font-size: 1.3rem;
 }
 
-@keyframes spin {
-  100% { transform: rotate(360deg); }
+.progress-wrapper {
+  margin-bottom: 14px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background: #404040;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.progress-fill {
+  width: 38%;
+  height: 100%;
+  background: var(--spotify-green);
+  border-radius: 4px;
+}
+
+.time-stamps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #a3a3a3;
+}
+
+.btn-spotify {
+  background-color: var(--spotify-green);
+  color: #000000;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #000000;
+  box-shadow: none;
 }
 
 /* =========================================
-   9. SLIDES 5 & 6: ANIMATED DINO & GHOST
+   9. SLIDES 5 & 6: CUSTOM STICKERS
    ========================================= */
 .bounce-emoji, .wiggle-emoji {
   font-size: 3.8rem;
@@ -407,47 +435,37 @@ h2 {
   50% { transform: translateY(-10px); }
 }
 
-.character-stage {
-  margin: 10px 0 18px;
-}
-
-/* Animated Dinosaur Stretching Arms */
-.dino-hug {
-  display: inline-flex;
-  align-items: center;
+.sticker-stage {
+  margin: 6px auto 16px;
+  display: flex;
   justify-content: center;
-  font-size: 3.5rem;
-  gap: 6px;
+  align-items: center;
 }
 
-.arm-left {
-  display: inline-block;
-  animation: stretchLeft 1.2s infinite alternate ease-in-out;
+.custom-sticker-img {
+  max-width: 240px;
+  max-height: 220px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-.arm-right {
-  display: inline-block;
-  animation: stretchRight 1.2s infinite alternate ease-in-out;
+.dino-anim {
+  border-radius: 16px;
+  animation: gentlePop 2.2s infinite ease-in-out;
 }
 
-@keyframes stretchLeft {
-  from { transform: translateX(0) rotate(0deg); }
-  to { transform: translateX(-18px) rotate(-15deg); }
+.hug-anim {
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+  animation: hugRock 2s infinite ease-in-out;
 }
 
-@keyframes stretchRight {
-  from { transform: translateX(0) rotate(0deg); }
-  to { transform: translateX(18px) rotate(15deg); }
+@keyframes gentlePop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
-/* Animated Floating Ghost */
-.floating-ghost {
-  font-size: 4.5rem;
-  display: inline-block;
-  animation: floatGhost 2s infinite ease-in-out;
-}
-
-@keyframes floatGhost {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-14px) scale(1.08); }
+@keyframes hugRock {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
 }
