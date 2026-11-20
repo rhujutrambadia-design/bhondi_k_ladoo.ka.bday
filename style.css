@@ -247,7 +247,7 @@ h2 {
 }
 
 /* =========================================
-   6. SLIDE 2: GRUMPY DUCK TRAP
+   6. SLIDE 2: GRUMPY CAT TRAP
    ========================================= */
 .character-card.grumpy {
   background: #fef2f2;
@@ -257,9 +257,14 @@ h2 {
   margin-bottom: 16px;
 }
 
-.duck-art {
-  font-size: 4rem;
-  animation: shake 0.5s ease-in-out infinite alternate;
+.grumpy-cat-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 3px solid var(--border-ink);
+  box-shadow: 3px 3px 0px var(--border-ink);
+  animation: angryShake 0.45s ease-in-out infinite alternate;
 }
 
 .speech-bubble {
@@ -270,12 +275,12 @@ h2 {
   padding: 4px 12px;
   font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-@keyframes shake {
-  from { transform: rotate(-6deg); }
-  to { transform: rotate(6deg); }
+@keyframes angryShake {
+  from { transform: rotate(-4deg) scale(1); }
+  to { transform: rotate(4deg) scale(1.03); }
 }
 
 /* =========================================
