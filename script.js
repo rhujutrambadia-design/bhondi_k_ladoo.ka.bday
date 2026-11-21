@@ -1,4 +1,23 @@
 // =========================================
+// 0. PASSCODE CHECK
+// =========================================
+function checkPasscode() {
+  const secretCode = 'I_am_gay.26.11'; // <-- CHANGE THIS TO YOUR SECRET PASSWORD
+  const inputEl = document.getElementById('passcodeInput');
+  const errorEl = document.getElementById('passError');
+  
+  // .trim().toLowerCase() makes it ignore accidental spaces or capital letters
+  if (inputEl.value.trim().toLowerCase() === secretCode.toLowerCase()) {
+    errorEl.classList.add('hidden');
+    startExperience(); // Unlocks Slide 1, starts music, and fires confetti!
+  } else {
+    errorEl.classList.remove('hidden');
+    inputEl.value = '';
+    inputEl.focus();
+  }
+}
+
+// =========================================
 // 1. STATE VARIABLES & ELEMENTS
 // =========================================
 let currentSlideIndex = 0;
