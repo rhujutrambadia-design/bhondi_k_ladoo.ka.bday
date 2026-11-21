@@ -254,7 +254,7 @@ const openWhenLetters = {
   horny: {
     title: "Open When You're Horny 🔥",
     photo: "horny.jpg",
-    message: "You know I can't keep my hands off you either. Call me and we'll do more, idhar itna hi.",
+    message: "You know I can't keep my hands off you either. Call me and we'll do more.",
     songUrl: "https://open.spotify.com/track/4zkl1JMviMNQKgaUYiSQfb?si=ae40695af40f4b05"
   },
   hug: {
@@ -272,18 +272,18 @@ const openWhenLetters = {
   stressed: {
     title: "Open When You're Stressed 😵‍💫",
     photo: "stress.jpg",
-    message: "Hey, don't let whatever is stressing you out make you forget how capable, smart, and unstoppable you are. You've handled 100% of your hardest days so far, and you're going to crush this too. One step at a time! Call me and I'll help you relieve stress",
+    message: "Tum aur stresed, thoda unbelieable. Stress ko bolo tumhari mkc. Don't let whatever is stressing you out make you forget how capable, smart, and unstoppable you are. You've handled 100% of your hardest days so far, and you're going to crush this too. One step at a time! Call me and I'll help you relieve stress",
     songUrl: "https://open.spotify.com/track/0XF0D8HL9gk2sr9tlFOee3?si=a5d6799b2cad450f"
   },
   miss: {
     title: "Open When You Miss Me 🥺",
     photo: "miss.jpeg",
-    message: "Awww..I'm missing you even more right now! Look at us, we're the cutest. Count down the days until I get to steal your blanket and annoy you in person.",
+    message: "Awww..I'm missing you even more right now! I'll come see you soon. Count down the days until I get to steal your blanket and annoy you in person.",
     songUrl: "https://open.spotify.com/track/7eQl3Yqv35ioqUfveKHitE?si=79cfb2f8fa9c4f48"
   },
   naraz: {
     title: "Open When You Feel Hurt By Me 😾",
-    photo: "fight.heic",
+    photo: "hurt.jpeg",
     message: "Hey, I am sorry. My dumbass would have said something that is not true at all. I know you won't tell me know but just tell me later. We'll figure it out. I love you to the moon and back. Now smile and text me so I can make it up to you!",
     songUrl: "https://open.spotify.com/track/1oghlB7Tm7Xo3M2BviDnic?si=5ed2ab028f764add"
   }
