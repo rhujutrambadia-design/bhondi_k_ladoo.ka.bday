@@ -90,6 +90,13 @@ function nextSlide() {
   if (currentSlideIndex < totalSlides - 1) {
     showSlide(currentSlideIndex + 1);
   }
+function prevSlide() {
+  // Stops at Slide 1 so he doesn't accidentally go back to the passcode lock screen
+  if (currentSlideIndex > 1) {
+    showSlide(currentSlideIndex - 1);
+  }
+}
+
 }
 
 function restartSlides() {
