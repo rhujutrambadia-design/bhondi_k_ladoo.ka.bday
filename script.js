@@ -247,43 +247,43 @@ const openWhenLetters = {
   },
   down: {
     title: "Open When You're Feeling Down 🌧️",
-    photo: "down.png",
+    photo: "down.jpg",
     message: "Hey, take a deep breath. I am here. Bad days don't last, and you never have to carry anything alone. Text or call me right now, let me be your safe space, no matter what.",
     songUrl: "https://open.spotify.com/track/0WQiDwKJclirSYG9v5tayI?si=cea077f4a0da4d84"
   },
   horny: {
     title: "Open When You're Horny 🔥",
-    photo: "horny.JPG",
+    photo: "horny.jpg",
     message: "You know I can't keep my hands off you either. Call me and we'll do more, idhar itna hi.",
     songUrl: "https://open.spotify.com/track/4zkl1JMviMNQKgaUYiSQfb?si=ae40695af40f4b05"
   },
   hug: {
     title: "Open When You Need a Hug 🫂",
-    photo: "hug.png",
+    photo: "hugggg.jpg",
     message: "Call me and I'll give you the tightest, longest bear hug through the screen right now. Close your eyes and imagine me squishing you until all your worries disappear.",
     songUrl: "https://open.spotify.com/track/0dLbrlAVPPjpPqnYfmJsWk?si=f020d08def4649ac"
   },
   excited: {
     title: "Open When You're Feeling Lonely ☹️",
     photo: "lonely.jpg",
-    message: "I LOVE THIS ENERGY!! Tell me everything right now—I want to hear you yap about it for hours. So proud of you, baby!",
+    message: "I know it is hard sometimes, living a new life. But we are here for you. Me, your parents, sister, friends, just give anyone of us a call or a simple hi.",
     songUrl: "https://open.spotify.com/track/0bYDMpQ94LnF38FiOlc8K9?si=2a972da22df944e1"
   },
   stressed: {
     title: "Open When You're Stressed 😵‍💫",
-    photo: "stress.jpeg",
+    photo: "stress.jpg",
     message: "Hey, don't let whatever is stressing you out make you forget how capable, smart, and unstoppable you are. You've handled 100% of your hardest days so far, and you're going to crush this too. One step at a time! Call me and I'll help you relieve stress",
     songUrl: "https://open.spotify.com/track/0XF0D8HL9gk2sr9tlFOee3?si=a5d6799b2cad450f"
   },
   miss: {
     title: "Open When You Miss Me 🥺",
-    photo: "miss.jpg",
-    message: "I'm missing you even more right now! Look at us, we're the cutest. Count down the days until I get to steal your blanket and annoy you in person.",
+    photo: "miss.jpeg",
+    message: "Awww..I'm missing you even more right now! Look at us, we're the cutest. Count down the days until I get to steal your blanket and annoy you in person.",
     songUrl: "https://open.spotify.com/track/7eQl3Yqv35ioqUfveKHitE?si=79cfb2f8fa9c4f48"
   },
   naraz: {
     title: "Open When You Feel Hurt By Me 😾",
-    photo: "fight.jpeg",
+    photo: "fight.heic",
     message: "Hey, I am sorry. My dumbass would have said something that is not true at all. I know you won't tell me know but just tell me later. We'll figure it out. I love you to the moon and back. Now smile and text me so I can make it up to you!",
     songUrl: "https://open.spotify.com/track/1oghlB7Tm7Xo3M2BviDnic?si=5ed2ab028f764add"
   }
