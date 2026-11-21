@@ -241,19 +241,19 @@ function flipFutCard() {
 const openWhenLetters = {
   happy: {
     title: "Open When You're Happy 🥳",
-    photo: "photo3.jpg", // Change to your custom photo filename!
+    photo: "happy.jpg", // Change to your custom photo filename!
     message: "Seeing you smile is literally my favorite thing in the world. Keep shining, celebrating your wins, and being the happiest boy! I'm always cheering the loudest for you.",
     songUrl: "https://open.spotify.com/" // Paste your Spotify track link here!
   },
   down: {
     title: "Open When You're Feeling Down 🌧️",
-    photo: "hug.png",
+    photo: "down.png",
     message: "Hey, take a deep breath. Bad days don't last, and you never have to carry anything alone. Text or call me right now—I'm always in your corner, no matter what.",
     songUrl: "https://open.spotify.com/"
   },
   horny: {
     title: "Open When You're Horny 🔥",
-    photo: "photo2.JPG",
+    photo: "horny.JPG",
     message: "Behave yourself right now 😏 Save that energy for the next time we're alone together... you know I can't keep my hands off you either.",
     songUrl: "https://open.spotify.com/"
   },
@@ -264,26 +264,26 @@ const openWhenLetters = {
     songUrl: "https://open.spotify.com/"
   },
   excited: {
-    title: "Open When You're Very Excited ⚡",
-    photo: "photo4.jpg",
+    title: "Open When You're Feeling Lonely ⚡",
+    photo: "lonely.jpg",
     message: "I LOVE THIS ENERGY!! Tell me everything right now—I want to hear you yap about it for hours. So proud of you, baby!",
     songUrl: "https://open.spotify.com/"
   },
   stressed: {
     title: "Open When You're Stressed 😵‍💫",
-    photo: "cat.jpeg",
+    photo: "stress.jpeg",
     message: "Pause, drop your shoulders, and unclench your jaw. You've handled 100% of your hardest days so far, and you're going to crush this too. One step at a time!",
     songUrl: "https://open.spotify.com/"
   },
   miss: {
     title: "Open When You Miss Me 🥺",
-    photo: "couple-song.jpg",
+    photo: "miss.jpg",
     message: "Spoiler alert: I'm missing you even more right now! Look at us—we're the cutest. Count down the hours until I get to steal your hoodies and annoy you in person.",
     songUrl: "https://open.spotify.com/"
   },
   naraz: {
-    title: "Open When You're Naraz With Me 😾",
-    photo: "grumpy-cat.jpeg",
+    title: "Open When You Feel Hurt By Me 😾",
+    photo: "hurt.jpeg",
     message: "Hawww, don't stay mad at your kuchu puchu 🥺 Even when I'm annoying or rage-baiting you, I love you to the moon and back. Now smile and text me so I can make it up to you!",
     songUrl: "https://open.spotify.com/"
   }
