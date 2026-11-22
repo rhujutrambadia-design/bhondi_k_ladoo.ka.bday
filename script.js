@@ -2,7 +2,7 @@
 // 0. PASSCODE CHECK
 // =========================================
 function checkPasscode() {
-  const secretCode = 'I.am.gay.'; // Change to any secret code if desired
+  const secretCode = 'Viraj.is.the.ultimate.goat'; // Change to any secret code if desired
   const inputEl = document.getElementById('passcodeInput');
   const errorEl = document.getElementById('passError');
 
