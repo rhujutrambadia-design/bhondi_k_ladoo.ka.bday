@@ -242,19 +242,19 @@ const openWhenLetters = {
   happy: {
     title: "Open When You're Happy 🥳",
     photo: "happy.jpg", // Change to your custom photo filename!
-    message: "Call me and tell me what made you so happy!!You look so good when you smile, I can look at you all day and night. Keep shining, celebrating your wins, and being the happiest boy! I'm always cheering the loudest for you.",
+    message: "Call me and tell me what made you so happy!!You look so good when you smile, I can look at you all my life. Keep shining, celebrating your wins, and being the happiest boy with a Varun Dhawan aah smile! I'm always cheering the loudest for you.",
     songUrl: "https://open.spotify.com/track/21GnahdCIuTImpiiEG6V96?si=4ac6fd6da5fb4209" // Paste your Spotify track link here!
   },
   down: {
     title: "Open When You're Feeling Down 🌧️",
     photo: "down.jpg",
-    message: "Hey, take a deep breath. I am here. Bad days don't last, and you never have to carry anything alone. Text or call me right now, let me be your safe space, no matter what.",
+    message: "Hey, take a deep breath. I am here. Bad days don't last, and you don't have to carry anything alone. Text or call me right now, let me be your safe space, no matter what.",
     songUrl: "https://open.spotify.com/track/0WQiDwKJclirSYG9v5tayI?si=cea077f4a0da4d84"
   },
   horny: {
     title: "Open When You're Horny 🔥",
     photo: "horny.jpg",
-    message: "You know I can't keep my hands off you either. Call me and we'll do more.",
+    message: "You know I can't keep my hands off you either. Call me and t-shirt utaro, hehe.",
     songUrl: "https://open.spotify.com/track/4zkl1JMviMNQKgaUYiSQfb?si=ae40695af40f4b05"
   },
   hug: {
@@ -266,7 +266,7 @@ const openWhenLetters = {
   excited: {
     title: "Open When You're Feeling Lonely ☹️",
     photo: "lonely.jpg",
-    message: "I know it is hard sometimes, living a new life. But we are here for you. Me, your parents, sister, friends, just give anyone of us a call or a simple hi.",
+    message: "I know it is hard sometimes, living a new life. But we are here for you; me, your parents, sister, friends, just give anyone of us a call or a simple hi.",
     songUrl: "https://open.spotify.com/track/0bYDMpQ94LnF38FiOlc8K9?si=2a972da22df944e1"
   },
   stressed: {
@@ -278,7 +278,7 @@ const openWhenLetters = {
   miss: {
     title: "Open When You Miss Me 🥺",
     photo: "miss.jpeg",
-    message: "Awww..I'm missing you even more right now! I'll come see you soon. Count down the days until I get to steal your blanket and annoy you in person.",
+    message: "Awww..I'm missing you even more right now! I'll come see you soon. Count down the days until I steal your cozy sweatshirt and annoy you in person. Until then, call me.",
     songUrl: "https://open.spotify.com/track/7eQl3Yqv35ioqUfveKHitE?si=79cfb2f8fa9c4f48"
   },
   naraz: {
